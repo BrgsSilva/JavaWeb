@@ -6,12 +6,19 @@ import java.sql.SQLException; //Método para tratamento dos erros.
 
 
 public class Conectar {
-	 public void ConnectiongetConnection() {
+	
+	 public void ConnectiongetConnection() throws ClassNotFoundException {
 	
 	try {
-		// carregar o drive do MySQL e passar informações para conexão
 		
+		//Carrega o driver em tempo de execução.
+		Class.forName("com.mysql.jdbc.Driver");
+		
+		
+		// carregar o drive do MySQL e passar informações para conexão
 		DriverManager.getConnection("jdbc:mysql://localhost/lojacd","root","");
+		
+		
 		
 		
 	}
